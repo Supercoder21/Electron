@@ -2,7 +2,6 @@ import re
 import math
 import numpy as np
 tokens = []
-var = ''''''
 def listcount(list,thing):
     count = 0
     for i in list:
@@ -49,7 +48,6 @@ def lexer(input):
                 pass
         tokens.append(li)
     return tokens
-var = lexer(var)
 def order(tk):
     orli = []
     for i in tk:
@@ -85,6 +83,7 @@ def order(tk):
             orli.append(i)
         else:
             print('Bad function')
+            print(i[0])
             quit()
     return orli
 def translate(orde):
@@ -317,5 +316,4 @@ def compiled(x):
     for u in x:
         print(np.float32(u))
 def transpilling(x):
-    compiled(translate(order(x)))
-transpilling(var)
+    compiled(translate(order(lexer(x))))
